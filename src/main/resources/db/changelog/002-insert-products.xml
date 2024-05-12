@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="insert-products" author="florinzamfir">
+        <sql>INSERT INTO product (name, price, description) VALUES ('Beer', 10.99, 'Beer');</sql>
+        <sql>INSERT INTO product (name, price, description) VALUES ('Chocolate', 20.49, 'Chocolate');</sql>
+        <sql>INSERT INTO product (name, price, description) VALUES ('Beer', 5.99, 'Beer');</sql>
+    </changeSet>
+
+</databaseChangeLog>

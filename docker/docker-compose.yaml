@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: storedb
+      MYSQL_USER: storeuser
+      MYSQL_PASSWORD: storepassword
+    ports:
+      - "3306:3306"
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/storedb
+      SPRING_DATASOURCE_USERNAME: storeuser
+      SPRING_DATASOURCE_PASSWORD: storepassword

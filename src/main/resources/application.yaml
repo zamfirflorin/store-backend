@@ -1,0 +1,25 @@
+port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/storedb
+    username: storeuser
+    password: storepassword
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+  security:
+    user:
+      password:
+        encoder:
+          enabled: true
+          strength: 10
+          secret: your-secret-key
+  main:
+    allow-bean-definition-overriding: true
